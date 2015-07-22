@@ -1,1 +1,6 @@
-<%= @user %>
+<%= @user.profile.first_name %><%= @user.profile.last_name %><br/>
+<%= @user.profile.mercy_team %><br/>
+<%= @user.profile.description %><br/>
+<% if current_user.plan_id > 1 %>
+    <%= @user.profile.contact_email %><br/>
+<% end %>
