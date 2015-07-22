@@ -11,7 +11,8 @@
                     <%= link_to "Edit your profile", "#", class: 'btn btn-primary btn-lg btn-block' %>
                     <%= link_to "View your profile", user_path(current_user), class: 'btn btn-primary btn-lg btn-block' %>
                 <% else %>
-                    <%= link_to "Create Your Profile!", new_user_profile_path(current_user), class: 'btn btn-primary btn-lg btn-block'%>
+                    <p>Create your profile to choose your Mercy Team and take your place in the community!</p>
+                    <%= link_to "Create Your Profile", new_user_profile_path(current_user), class: 'btn btn-primary btn-lg btn-block'%>
                 <% end %>
             </div>
         </div>
