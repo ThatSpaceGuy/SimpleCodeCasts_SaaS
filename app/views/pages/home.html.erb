@@ -2,8 +2,9 @@
     <h1>The Total Mercy Initiative</h1>
     <h3>Bringing His Mercy to those who need it most. </h3>
 </div>
-<div class="row">
-    <% if user_signed_in? %>
+
+<% if user_signed_in? %>
+    <div class="row">
         <div class="col-md-6">
             <div class="well text-center">
                 <h2>Your Profile</h2>
@@ -24,29 +25,31 @@
                 <%= link_to "Visit the community", users_path, class: 'btn btn-primary btn-lg btn-block' %>
             </div>
         </div>
-    <% else %>
-        <div class="well text-center">
-            <div class="col-md-4">
+    </div>
+<% else %>
+    <div class="row">
+        <div class="well col-md-12">
+            <div class="col-md-4 text-center">
                     <h2>Believer</h2>
                     <h4>Faithful Membership</h4>
-                    <p>Take up the work of interceding for the world.
-                    <br/>Join our community for free!<br/></p>
+                    <p>Join the work of interceding for the world.
+                    <br/>Be a part our community for free!<br/></p>
                     <%= link_to "Sign up free", new_user_registration_path(plan: @believer_plan.id), class: 'btn btn-danger btn-lg btn-block' %>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 text-center">
                     <h2>Disciple</h2>
                     <h4>Supporting Membership</h4>
                     <p>Help this initiative to grow and</br/>
                     get access to helpful tools. ($5/month)<br/></p>
                     <%= link_to "Sign up now", new_user_registration_path(plan: @disciple_plan.id), class: 'btn btn-danger btn-lg btn-block' %>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 text-center">
                     <h2>Apostle</h2>
                     <h4>Cornerstone Membership</h4>
                     <p>Ensure the future of this work and
-                    <br/>enjoy full access to our prayer resources.<br/>($20/month)</p>
+                    <br/>enjoy full access to resources. ($20/month)</p>
                     <%= link_to "Sign up now", new_user_registration_path(plan: @apostle_plan.id), class: 'btn btn-danger btn-lg btn-block' %>
             </div>
         </div>
-    <% end %>
-</div>
+    </div>
+<% end %>

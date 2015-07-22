@@ -1,1 +1,27 @@
-List all users
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <ul class="list-unstyled">
+            <% @users.each do |user| %>
+                <% if user.profile %>
+                    <li>
+                        <div class="well row <%= cycle('white-bg','ltblue-bg') %>">
+                            <div class="col-sm-4 text-center">
+                                <% if user.profile.charity %>
+                                    <%= link_to user do %>
+                                        <%= image_tag user.profile.charity.url(:thumb), class: 'user-index-charity' %>
+                                    <% end %>
+                                <% end %>
+                            </div>
+                            <div>
+                                <%= link_to user do %>
+                                    <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
+                                    <p><%= user.profile.mercy_team %> Time Zone</p>
+                                <% end %>
+                            </div>
+                        </div>
+                    </li>
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+</div>
