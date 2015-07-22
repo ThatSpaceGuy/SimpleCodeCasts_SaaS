@@ -15,7 +15,13 @@
                             <div>
                                 <%= link_to user do %>
                                     <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
-                                    <p><%= user.profile.mercy_team %> Time Zone</p>
+                                    <p><%= user.profile.mercy_team %> Time Zone
+                                        <% if user.plan_id == 1 %>
+                                            <span class="label label-primary">Basic Member</span>
+                                        <% else %>
+                                            <span class="label label-success">Supporting Member</span>
+                                        <% end %>
+                                    </p>
                                 <% end %>
                             </div>
                         </div>
