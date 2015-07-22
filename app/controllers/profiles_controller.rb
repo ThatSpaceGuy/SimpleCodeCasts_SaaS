@@ -38,4 +38,9 @@ class ProfilesController < ApplicationController
     def profile_params
         params.require(:profile).permit(:first_name, :last_name, :contact_email, :mercy_team, :description)
     end
+    
+    def only_current_user
+       @user = User.find( params[:user_id] )
+       redirect_to(root_url) unless @user == current_user
+    end
 end
